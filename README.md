@@ -1,1 +1,1 @@
-# fundamental
+# To Record Fundamental Code1. Described in C/Java/Python2. Contain basic algorithms and data structures3. Still include algorithm related questions
