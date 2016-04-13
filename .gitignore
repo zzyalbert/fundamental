@@ -1,1 +1,5 @@
 build
+*jar
+*.class
+*.pyc
+*.o
