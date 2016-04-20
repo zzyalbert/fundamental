@@ -1,6 +1,6 @@
 // Created By:      ZhongZiyuan <zzy.albert@163.com>
 // Created Time:    2016-04-12 22:22:49
-// Modified Time:   2016-04-20 10:02:02
+// Modified Time:   2016-04-20 12:57:21
 
 #include <iostream>
 
@@ -33,11 +33,11 @@ int partition1(int *arr, int begin, int end)
 
 int partition2(int* arr, int begin, int end)
 {
-    int i=begin+1, j=end;
+    int i=begin, j=end;
     while(i<j)
     {
-        while(arr[i]<=arr[begin]) i++;
-        while(arr[j]>arr[begin]) j--;
+        while(i<end && arr[i]<=arr[begin]) i++;
+        while(j>begin && arr[j]>arr[begin]) j--;
         if(i<j)
         {
             swap(arr[i], arr[j]);
@@ -66,10 +66,11 @@ void print(int *arr, int len)
 }
 
 int main(int argc, char *argv[]) {
-    int arr[] = {2,2,2,2,5,3,76,12,33,5,5,5};
-    print(arr, 12);
-    quick_sort(arr, 0, 11);
-    print(arr, 12);
+    int arr[] = {2,4,21,2,2,15,3,76,52,52,30,12,33,5,5,5};
+    int len = 16;
+    print(arr, len);
+    quick_sort(arr, 0, len-1);
+    print(arr, len);
     return 0;
 }
 
