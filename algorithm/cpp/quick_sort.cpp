@@ -1,6 +1,6 @@
 // Created By:      ZhongZiyuan <zzy.albert@163.com>
 // Created Time:    2016-04-12 22:22:49
-// Modified Time:   2016-04-20 12:57:21
+// Modified Time:   2016-06-16 13:28:15
 
 #include <iostream>
 
@@ -17,16 +17,16 @@ void swap(int& a, int& b)
 
 int partition1(int *arr, int begin, int end)
 {
-    int i, j;
-    for(i=j=begin+1;j<=end;j++ )
+    int mid = begin;
+    for (int i = begin; i <= end; i++ )
     {
-        if(arr[begin]>arr[j])
+        if (arr[begin]>=arr[i])
         {
-            swap(arr[i],arr[j]);
-            i++;
+            swap(arr[mid],arr[i]);
+            mid++;
         }
     }
-    int mid = i-1;
+    mid -= 1;
     swap(arr[begin],arr[mid]);
     return mid;
 }
@@ -53,7 +53,7 @@ void quick_sort(int *arr, int begin, int end)
 {
     if(NULL == arr || begin >= end || begin < 0 || end < 0)
         return;
-    int mid = partition2(arr, begin, end);
+    int mid = partition1(arr, begin, end);
     quick_sort(arr, begin, mid-1);
     quick_sort(arr, mid+1, end);
 }
