@@ -1,3 +1,4 @@
+# set source file name to make it built and run
 src:=../quick_sort.cpp
 
 all:clean
