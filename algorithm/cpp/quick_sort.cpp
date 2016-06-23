@@ -1,6 +1,6 @@
 // Created By:      ZhongZiyuan <zzy.albert@163.com>
 // Created Time:    2016-04-12 22:22:49
-// Modified Time:   2016-06-23 11:18:15
+// Modified Time:   2016-06-23 17:07:13
 
 #include <iostream>
 //#include <stdlib.h>
@@ -85,6 +85,8 @@ void quick_sort(int *arr, int begin, int end)
     quick_sort(arr, begin, mid-1);
     quick_sort(arr, mid+1, end);
 }
+
+/****************************  TEST  ******************************/
 
 void print(int *arr, int len)
 {
