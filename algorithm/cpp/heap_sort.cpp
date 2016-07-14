@@ -1,6 +1,6 @@
 // Created By:      ZhongZiyuan <zzy.albert@163.com>
 // Created Time:    2016-04-12 22:22:49
-// Modified Time:   2016-06-23 19:25:19
+// Modified Time:   2016-07-14 10:33:58
 
 #include <iostream>
 
@@ -13,6 +13,11 @@ void swap(int& a, int& b)
     a ^= b;
     b ^= a;
     a ^= b;
+}
+
+int left_child(int parent, int offset)
+{
+    return parent * 2 - offset + 1;
 }
 
 void adjust_max_heap1(int* arr, int begin, int end)
