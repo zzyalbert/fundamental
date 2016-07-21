@@ -1,6 +1,6 @@
 // Created By:      ZhongZiyuan <zzy.albert@163.com>
 // Created Time:    2016-04-12 22:22:49
-// Modified Time:   2016-07-14 10:33:58
+// Modified Time:   2016-07-20 13:47:29
 
 #include <iostream>
 
@@ -17,15 +17,15 @@ void swap(int& a, int& b)
 
 int left_child(int parent, int offset)
 {
-    return parent * 2 - offset + 1;
+    return parent * 2 + 1 - offset;
 }
 
 void adjust_max_heap1(int* arr, int begin, int end)
 {
     int i = begin;
-    while (i*2+1 <= end)
+    int big_child;
+    while ((big_child=i*2+1) <= end)
     {
-        int big_child = i*2+1;
         if(big_child + 1 <= end && arr[big_child] < arr[big_child+1])
             big_child += 1;
         if(arr[i] < arr[big_child])
@@ -57,12 +57,12 @@ void heap_sort(int *arr, int begin, int end)
         return;
 
     for(int i=(end-1)/2; i>=begin; i--)
-        adjust_max_heap2(arr, i, end);
+        adjust_max_heap1(arr, i, end);
     
     for(int i=end; i>begin; i--)
     {
         swap(arr[begin], arr[i]);
-        adjust_max_heap2(arr, begin, i-1);
+        adjust_max_heap1(arr, begin, i-1);
     }
 }
 
