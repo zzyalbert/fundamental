@@ -2,7 +2,7 @@
 # coding=utf-8
 # Created By:      ZhongZiyuan <zzy.albert@163.com>
 # Created Time:    2016-08-14 23:58:14
-# Modified Time:   2016-08-15 00:08:15
+# Modified Time:   2016-08-15 17:04:11
 
 def adjust(arr, begin, end):
     big_child = begin*2+1
@@ -19,10 +19,9 @@ def heap_sort(arr):
         return
     begin = 0
     end = len(arr)-1
-    for i in range((end-1)/2, begin-1):
-        print arr[i]
+    for i in range((end-1)/2, begin-1, -1):
         adjust(arr,i,end)
-    for i in range(end, begin):
+    for i in range(end, begin, -1):
         arr[begin],arr[i] = arr[i],arr[begin]
         adjust(arr, begin, i-1)
 
