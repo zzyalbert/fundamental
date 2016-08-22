@@ -2,9 +2,12 @@
 # coding=utf-8
 # Created By:      ZhongZiyuan <zzy.albert@163.com>
 # Created Time:    2016-04-12 22:16:51
-# Modified Time:   2016-08-14 23:57:06
+# Modified Time:   2016-08-22 11:34:11
+import random
 
 def partition(arr, begin, end):
+    r = random.randint(begin, end)
+    arr[begin], arr[r] = arr[r], arr[begin]
     mid = begin
     for i in range(begin+1, end+1):
         if arr[begin] > arr[i]:

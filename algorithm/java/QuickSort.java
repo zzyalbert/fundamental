@@ -1,17 +1,23 @@
+import java.util.Random;
+
 class QuickSort{
-    
+    private static Random rand = new Random();
     public static int partition(int[] arr, int begin, int end){
+        int r = rand.nextInt(end-begin)+begin;
+        int tmp = arr[begin];
+        arr[begin] = arr[r];
+        arr[r] = tmp;
         int mid = begin;
         for (int i = begin+1; i<=end; i++){
             if ( arr[begin] >= arr[i]){
                 mid++;
-                int tmp = arr[mid];
+                tmp = arr[mid];
                 arr[mid] = arr[i];
                 arr[i] = tmp;
             }
         }
 
-        int tmp = arr[begin];
+        tmp = arr[begin];
         arr[begin] = arr[mid];
         arr[mid] = tmp;
         return mid;
